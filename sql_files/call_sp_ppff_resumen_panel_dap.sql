@@ -1,0 +1,1 @@
+CALL schm_productos_financieros.sp_ppff_resumen_panel_dap(DATE_PART(YEAR,CURRENT_DATE::date)::INT, datepart(month,current_date::date)::INT, cast(date_part(year, current_date)*100+date_part(month, current_date) as int))

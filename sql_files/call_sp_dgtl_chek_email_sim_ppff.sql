@@ -1,0 +1,1 @@
+call schm_digital.sp_dgtl_chek_email_sim_ppff();

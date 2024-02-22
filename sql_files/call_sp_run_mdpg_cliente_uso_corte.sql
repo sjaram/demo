@@ -1,0 +1,1 @@
+call schm_artifacts.sp_run_MDPG_CLIENTE_USO_CORTE()

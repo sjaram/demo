@@ -1,0 +1,1 @@
+CALL schm_artifacts.sp_run_mdpg_movimientos_debito();

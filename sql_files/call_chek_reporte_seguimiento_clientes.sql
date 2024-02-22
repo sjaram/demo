@@ -1,0 +1,1 @@
+call schm_digital.sp_chek_reporte_seguimiento_clientes();

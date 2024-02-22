@@ -1,0 +1,1 @@
+call schm_artifacts.sp_run_spos_foto_resumen();

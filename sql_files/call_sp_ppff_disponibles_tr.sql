@@ -1,0 +1,1 @@
+call schm_artifacts.sp_run_ppff_disponibles_tr();

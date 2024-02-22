@@ -1,0 +1,13 @@
+call schm_artifacts.sp_dgtl_funnel_captacion_digital(date_trunc('month', current_date):: date,last_day(current_date),schm_artifacts.f_period(current_date),schm_artifacts.f_period_add_n_months(schm_artifacts.f_period(current_Date), -1),DATE_PART('day',current_date):: int,current_date);
+#email_sender = BigdataSesClient();
+#email_sender.add_to('nverdejog@bancoripley.com,rarcosm@bancoripley.com,msanhuezaa@bancoripley.com,brodriguezc@bancoripley.com,cvergarar@bancoripley.com,cparedesp@bancoripley.com,cpalmal@bancoripley.com');
+#email_sender.add_subject(f'{get_period()[:8]} Funnel Captación Digital');
+#email_sender.add_text('Buenos dias,\nSe adjuntan datos de funnel captación digital. \nSaludos, ');
+#email_sender.add_file(f'dgtl/banco/dgtl_funnel_captacion/funnel_captacion_resumen_{get_period()}.csv');
+#email_sender.add_file(f'dgtl/banco/dgtl_funnel_captacion/funnel_captacion_solicitudes_online_{get_period()}.csv');
+#email_sender.add_file(f'dgtl/banco/dgtl_funnel_captacion/funnel_captacion_antecedentes_ok_{get_period()}.csv');
+#email_sender.add_file(f'dgtl/banco/dgtl_funnel_captacion/funnel_captacion_autentificacion_facial_{get_period()}.csv');
+#email_sender.add_file(f'dgtl/banco/dgtl_funnel_captacion/funnel_captacion_formalizacion_ok_{get_period()}.csv');
+#email_sender.add_file(f'dgtl/banco/dgtl_funnel_captacion/funnel_captacion_sinacofi_ok_{get_period()}.csv');
+#email_sender.add_file(f'dgtl/banco/dgtl_funnel_captacion/funnel_captacion_solicitud_online_bio_{get_period()}.csv');
+#email_sender.send_email();

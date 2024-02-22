@@ -1,0 +1,1 @@
+call schm_artifacts.sp_ppff_dispo_av_compra(schm_artifacts.f_period(current_date));

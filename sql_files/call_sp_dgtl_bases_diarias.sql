@@ -1,0 +1,1 @@
+call schm_digital.sp_dgtl_bases_diarias();

@@ -1,0 +1,1 @@
+call schm_artifacts.sp_mdpg_contratos_itf();

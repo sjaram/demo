@@ -1,0 +1,1 @@
+call schm_artifacts.sp_run_spos_rubro_preferente();

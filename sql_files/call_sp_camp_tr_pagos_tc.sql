@@ -1,0 +1,1 @@
+CALL schm_artifacts.sp_camp_tr_pagos_tc('CAMPAIGN_INPUT_TR_PAGOS_TC' ,'SJARAM',schm_artifacts.f_period(current_date)::varchar ,'select * from schm_data_analytics.input_tr_pagos_tc');

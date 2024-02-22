@@ -1,0 +1,1 @@
+call schm_artifacts.sp_camp_onb_spos_aut();

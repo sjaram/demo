@@ -1,0 +1,1 @@
+#sftp_redshift_sender(arg_sftp='camp_motor_ftp', aws_file_key='sync_agent/test/test.txt', sftp_file_key='/bas_04/sat/ripley/ripprod/dat/test.txt')

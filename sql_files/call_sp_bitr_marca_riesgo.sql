@@ -1,0 +1,1 @@
+call schm_artifacts.sp_bitr_marca_riesgo(schm_artifacts.f_period(trunc(DATEADD(MM,-1,current_date))));

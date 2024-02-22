@@ -1,0 +1,1 @@
+CALL schm_artifacts.sp_spos_credito();

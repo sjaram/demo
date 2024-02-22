@@ -1,0 +1,1 @@
+call schm_artifacts.sp_ppff_saldo_sav(schm_artifacts.f_period(current_date));

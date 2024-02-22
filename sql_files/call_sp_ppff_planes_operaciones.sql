@@ -1,0 +1,11 @@
+CALL schm_artifacts.sp_ppff_planes_operaciones();
+#email_sender = BigdataSesClient();
+#email_sender.add_to('aborquezj@bancoripley.com,pzuniga@bancoripley.com,estaroswiecki@bancoripley.com,jaravena@bancoripley.com,jmurillog@bancoripley.com,jolmos@bancoripley.com,mjimenezc@bancoripley.com,oleiva@bancoripley.com,sjaram@bancoripley.com,dvasquez@bancoripley.com,cbastiasj@bancoripley.com,pquinteroc@bancoripley.com,eapinoh@bancoripley.com,gvallejosa@bancoripley.com,pmunozc@bancoripley.com,jaburtom@ripley.com,bmartinezg@bancoripley.com,pquirozm@bancoripley.com,morellanan@bancoripley.com');
+#email_sender.add_subject('AWS MAIL AUTOMATICO: Planes operaciones');
+#email_sender.add_text('Estimados,\n Se Adjunta Archivo Informacion de Planes Actualizado \n');
+#email_sender.add_text('\n \n');
+#email_sender.add_text('Saludos Cordiales');
+#email_sender.add_text('Equipo Arquitectura de Datos y Automatización');
+#email_sender.add_text('Gerencia Data Analytics');
+#email_sender.add_file(f'ppff/planes_operaciones/PLANES_OPERACIONES_CALL_ARCHIVO_UNICO000.csv');
+#email_sender.send_email();

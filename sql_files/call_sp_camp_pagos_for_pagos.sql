@@ -1,0 +1,1 @@
+CALL schm_artifacts.camp_tr_pagos_tc('CAMPAIGN_INPUT_TR_PAGOS_TC' ,'SJARAM' ,TO_CHAR(GETDATE(), 'YYYYMM') ,'select * from schm_data_analytics.input_tr_pagos_tc');

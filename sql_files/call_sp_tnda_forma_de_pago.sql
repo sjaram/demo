@@ -1,0 +1,1 @@
+call schm_artifacts.sp_run_tnda_forma_de_pago(1);

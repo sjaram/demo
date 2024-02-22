@@ -1,0 +1,1 @@
+call schm_artifacts.sp_ctbl_seg_diario_act_dat_bop();

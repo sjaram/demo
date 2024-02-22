@@ -1,0 +1,1 @@
+call schm_artifacts.sp_clts_universo_panes();

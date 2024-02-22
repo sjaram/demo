@@ -1,0 +1,1 @@
+call schm_campanas.sp_camp_onboarding_spos();

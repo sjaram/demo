@@ -1,0 +1,1 @@
+call schm_artifacts.sp_bitr_lca(schm_artifacts.f_period(trunc(DATEADD(MM,-1,current_date))));

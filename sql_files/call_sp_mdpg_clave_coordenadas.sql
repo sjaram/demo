@@ -1,0 +1,1 @@
+call schm_artifacts.sp_run_mdpg_clave_coordenadas();

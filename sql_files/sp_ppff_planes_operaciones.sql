@@ -1,0 +1,1 @@
+CALL schm_productos_financieros.sp_ppff_planes_operaciones();

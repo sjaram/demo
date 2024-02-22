@@ -1,0 +1,1 @@
+call schm_artifacts.sp_ctbl_chek_contactabilidad();

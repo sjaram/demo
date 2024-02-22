@@ -1,0 +1,1 @@
+CALL schm_facturacion.sp_ppff_unload_salida_base_propension();

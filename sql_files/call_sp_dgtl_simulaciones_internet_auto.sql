@@ -1,0 +1,1 @@
+call schm_artifacts.sp_dgtl_simulaciones_internet_auto();

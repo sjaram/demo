@@ -1,0 +1,1 @@
+CALL schm_artifacts.sp_mdpg_mora_car_sinacofi();

@@ -1,0 +1,22 @@
+call schm_planificacion_comercial.sp_run_chek();
+call schm_planificacion_comercial.sp_run_dap();
+call schm_planificacion_comercial.sp_run_captaciones();
+call schm_planificacion_comercial.sp_run_retail_credito();
+call schm_planificacion_comercial.sp_run_retail_debito_chek();
+call schm_planificacion_comercial.sp_run_saldos();
+call schm_planificacion_comercial.sp_run_financiamiento();
+call schm_planificacion_comercial.sp_run_leads_digitales();
+call schm_planificacion_comercial.sp_metas_matinal();
+call schm_planificacion_comercial.sp_metas_vespertino();
+
+#email_sender = BigdataSesClient();
+#email_sender.add_to('dvasquez@bancoripley.com,pmunozc@bancoripley.com');
+#email_sender.add_subject('AWS MAIL AUTOMATICO: Calls del Matinal Terminados - Parte 1');
+#email_sender.add_text('Hola, SP Matinal ejecutado con éxito - Parte 1');
+#email_sender.add_text('\n \n');
+#email_sender.add_text('v20240126');
+#email_sender.add_text('\n \n');
+#email_sender.add_text('Saludos Cordiales');
+#email_sender.add_text('Equipo Arquitectura de Datos y Automatización');
+#email_sender.add_text('Gerencia Data Analytics');
+#email_sender.send_email();

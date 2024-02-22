@@ -1,0 +1,1 @@
+call schm_artifacts.sp_dgtl_mc_chek_tableau()

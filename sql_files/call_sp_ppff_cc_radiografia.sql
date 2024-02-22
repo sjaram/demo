@@ -1,0 +1,1 @@
+call schm_productos_financieros.sp_run_ppff_radiografia_CtaCte();
