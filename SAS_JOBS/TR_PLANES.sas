@@ -1,0 +1,118 @@
+PROC SQL;
+   CREATE TABLE RESULT.UNIV_TI_VIG AS
+   SELECT t1.RUT,
+          t1.CODENT,
+          t1.CENTALTA,
+          t1.CUENTA,
+          t1.TIPO_TARJETA,
+          t1.Tipo_Tarjeta_RSAT,
+          t1.PAN,
+          t1.PANANT,
+          (MAX(t1.NUMPLASTICO)) FORMAT=13. AS MAX_of_NUMPLASTICO
+      FROM RESULT.UNIVERSO_PANES t1
+      WHERE t1.CALPART = 'TI' AND t1.T_CTTO_VIGENTE = 1 AND t1.T_TR_VIG=1
+      GROUP BY t1.RUT,
+          t1.CODENT,
+          t1.CENTALTA,
+          t1.CUENTA,
+          t1.TIPO_TARJETA,
+          t1.Tipo_Tarjeta_RSAT,
+          t1.PAN,
+          t1.PANANT
+;QUIT;
+
+PROC SQL;
+CREATE TABLE RESULT.UNIV_TI_VIG_ANT AS
+   SELECT T1.RUT,
+          T1.CODENT,
+          T1.CENTALTA,
+          T1.CUENTA,
+    	  CASE 
+			   WHEN T1.TIPO_TARJETA IN ('MASTERCARD DEBITO','MAESTRO DEBITO') THEN 'TD'
+               WHEN T1.TIPO_TARJETA IN ('DEBITO CTACTE') THEN 'CC' ELSE T1.TIPO_TARJETA END AS TIPO_TARJETA,
+		  T1.TIPO_TARJETA_RSAT,
+		  T2.TIPO_TARJETA_RSAT AS TIPO_TARJETA_RSAT_ANT,
+          CASE 
+			   WHEN T2.TIPO_TARJETA IN ('MASTERCARD DEBITO','MAESTRO DEBITO') THEN 'TD'
+               WHEN T2.TIPO_TARJETA IN ('DEBITO CTACTE') THEN 'CC' ELSE T2.TIPO_TARJETA END AS TIPO_ANT,
+          T1.PAN,
+          T1.PANANT,
+          T1.MAX_OF_NUMPLASTICO,
+          CASE
+               WHEN T1.TIPO_TARJETA_RSAT=T2.TIPO_TARJETA_RSAT THEN 0
+               WHEN T1.PANANT IS NULL THEN 0 ELSE 1 END AS CDTT
+    FROM RESULT.UNIV_TI_VIG T1 LEFT JOIN RESULT.UNIVERSO_PANES T2
+          ON T1.PANANT=T2.PAN AND T1.CUENTA=T2.CUENTA
+;QUIT;
+
+/*OBTENCIÓN DATA DE PLANES*/
+PROC SQL;
+CREATE TABLE TR_PLANES_0 AS
+	SELECT INPUT(SUBSTR(A.IDENTIFICADOR_CLIENTE,1,LENGTH(A.IDENTIFICADOR_CLIENTE)-1),BEST.) AS ID_USUARIO,
+		   A.PLAN_ID,
+		   datepart(A.actualizado_el) format=e8601da. as fecha_mov
+FROM PUBLICIN.PLANES_TBL_PLAN_CLIENTE A
+WHERE A.ESTADO='ENABLED';
+;QUIT;
+
+/*CRUCE CON UNIVERSO DE PANES VIGENTES Y ANTERIORES*/
+PROC SQL;
+CREATE TABLE PUBLICIN.TR_PLANES AS
+SELECT DISTINCT 
+	A.*,
+	B.TIPO_TARJETA,
+	B.TIPO_ANT AS TIPO_TARJETA_ANT,
+	B.CDTT
+FROM TR_PLANES_0 A
+LEFT JOIN RESULT.UNIV_TI_VIG_ANT B
+ON A.ID_USUARIO=B.RUT
+;QUIT;
+
+/*
+PROC EXPORT DATA = PUBLICIN.TR_PLANES
+	OUTFILE="/sasdata/users94/user_bi/unica/input/INPUT-TR_PLANES.csv"
+		DBMS=dlm REPLACE;
+	delimiter=',';
+	PUTNAMES=YES;
+RUN;
+*/
+
+/*salida del proceso indicando el tiempo total */
+DATA _null_;
+fgenera = compress(input(put(today(),mmddyy.),$10.),"-",);
+Call symput("fechaDIA",fgenera);
+RUN;
+%put &fechaDIA;
+
+/*==================================	EMAIL CON CASILLA VARIABLE	================================*/
+proc sql noprint;                              
+	SELECT EMAIL into :EDP_BI FROM result.EDP_BI_DESTINATARIOS WHERE CODIGO = 'EDP_BI';
+	SELECT EMAIL into :DEST_1 FROM result.EDP_BI_DESTINATARIOS WHERE CODIGO = 'JEFE_ARQ_DAT';
+	SELECT EMAIL into :DEST_2 FROM result.EDP_BI_DESTINATARIOS WHERE CODIGO = 'PM_ARQ_DAT_1';
+	SELECT EMAIL into :DEST_3 FROM result.EDP_BI_DESTINATARIOS WHERE CODIGO = 'JEFATURA_CAMP';
+quit;
+
+%put &=EDP_BI;	%put &=DEST_1;	%put &=DEST_2; %put &=DEST_3;
+
+data _null_;
+FILENAME OUTBOX EMAIL
+FROM 	= ("&EDP_BI")
+TO 		= ("&DEST_3","&DEST_2","&DEST_1")
+SUBJECT = ("MAIL_AUTOM: - PROCESO TR_PLANES");
+FILE OUTBOX;
+ 	PUT "DATA MASTER";
+ 	PUT "    Proceso TR_PLANES, ejecutado con fecha: &fechaDIA.";  
+ 	PUT ; 
+ 	PUT "	FECHA: &fechaDIA."; 
+ 	PUT ;
+ 	PUT ;
+ 	PUT 'Proceso Vers. 01'; 
+ 	PUT;
+ 	PUT;
+ 	PUT 'Atte.';
+ 	PUT 'Equipo Arquitectura de Datos y Automatización BI';
+ 	PUT;
+RUN;
+FILENAME OUTBOX CLEAR;
+
+

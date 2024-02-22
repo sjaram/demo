@@ -1,0 +1,1 @@
+CALL schm_artifacts.sp_clts_baja_cupo(schm_artifacts.f_period(trunc(DATEADD(MM,-1,current_date))),'BAJA_CUPO','SJARAM',schm_artifacts.f_period(current_date)::VARCHAR,'select * from schm_workspace.camp_baja_cupo');
