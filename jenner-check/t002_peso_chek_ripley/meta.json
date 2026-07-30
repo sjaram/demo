@@ -1,0 +1,7 @@
+{
+  "bundle": "t002_peso_chek_ripley",
+  "source_file": "SAS_JOBS/PESO_CHEK_RIPLEY.sas",
+  "source_blob_sha": "f17cc7e0f67810cba9dc24ddf6a8597c1e5e16b1",
+  "source_commit": "27f6bb36480b4ba5998835746ddcc5d2095279c1",
+  "notes": "Retail CHEK-payment-method share by store/department across a rolling 4-period window. Kept the PARAM_DEPTOS inline VALUES table (real department taxonomy from the script), the %uso_tr_trx aggregation macro, the UNION ALL, the CASE-WHEN normalization + LEFT JOIN, the GROUP BY summary, and both PROC TRANSPOSE steps + the array-based null cleanup unmodified. Substituted mock RESULT.USO_TR_MARCA_<period> tables for the four periods the script's date macros resolve to. Dropped: the upstream %if/%else day-of-month branch (exercised one arm instead of branching on wall-clock day), the trailing PROC EXPORT to a hardcoded path, and the %envio_email macro invocation (which addressed real bancoripley.com staff, so it was never appropriate to fire from a bundle) -- replaced the EXPORT+email tail with a PROC PRINT so the run has visible output."
+}

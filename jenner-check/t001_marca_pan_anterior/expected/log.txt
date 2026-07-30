@@ -1,0 +1,30 @@
+NOTE: Option OBS changed to 100.
+NOTE: Library RESULT assigned path=/tmp/work/r_98c7321cf2784fa6a9944ccbd4d12c88/work/20f05af8-4039-4b0d-97ae-87fda721f2a3.
+NOTE: DATA result.universo_panes
+
+NOTE: Processing inline DATALINES (9 lines)
+
+NOTE: Read 9 rows from DATALINES.
+NOTE: Wrote result.universo_panes (9 rows, 12 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA result.universo_panes
+
+
+NOTE: Read 9 rows from result.universo_panes.
+NOTE: Wrote result.universo_panes (9 rows, 12 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SQL 
+
+NOTE: Table RESULT.UNIV_TI_VIG created.
+NOTE: PROC SQL statement used.
+NOTE: PROC SQL 
+
+NOTE: PROC SQL statement used.
+NOTE: PROC SQL 
+
+NOTE: Table RESULT.UNIV_TI_VIG_ANT created.
+NOTE: PROC SQL statement used.

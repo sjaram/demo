@@ -1,0 +1,64 @@
+NOTE: Option OBS changed to 100.
+NOTE: Library RESULT assigned path=/tmp/work/r_8586510f68cd4f85b6ea6778e7f9f271/work/3c96602a-268f-4097-8f6c-d86049fdbf5c.
+NOTE: Library PUBLICIN assigned path=/tmp/work/r_8586510f68cd4f85b6ea6778e7f9f271/work/3c96602a-268f-4097-8f6c-d86049fdbf5c.
+NOTE: DATA result.ctavta1_stock
+
+NOTE: Processing inline DATALINES (3 lines)
+
+NOTE: Read 3 rows from DATALINES.
+NOTE: Wrote result.ctavta1_stock (3 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA result.ctavta1_stock
+
+
+NOTE: Read 3 rows from result.ctavta1_stock.
+NOTE: Wrote result.ctavta1_stock (3 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA publicin.lnegro_car
+
+NOTE: Processing inline DATALINES (2 lines)
+
+NOTE: Read 2 rows from DATALINES.
+NOTE: Wrote publicin.lnegro_car (2 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA publicin.lnegro_car
+
+
+NOTE: Read 2 rows from publicin.lnegro_car.
+NOTE: Wrote publicin.lnegro_car (2 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA result.stock_cc
+
+NOTE: Processing inline DATALINES (3 lines)
+
+NOTE: Read 3 rows from DATALINES.
+NOTE: Wrote result.stock_cc (3 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC EXPORT data=RESULT.CTAVTA1_STOCK outfile=./output/CTAVTA1_STOCK.csv
+
+NOTE: Exported 3 rows to ./output/CTAVTA1_STOCK.csv.
+NOTE: PROC EXPORT data=PUBLICIN.LNEGRO_CAR outfile=./output/LNEGRO_CAR.csv
+
+NOTE: Exported 2 rows to ./output/LNEGRO_CAR.csv.
+NOTE: PROC EXPORT data=RESULT.STOCK_CC outfile=./output/STOCK_CC.csv
+
+NOTE: Exported 3 rows to ./output/STOCK_CC.csv.
+NOTE: PROC PRINT data=RESULT.CTAVTA1_STOCK
+
+NOTE: PROC PRINT completed: 3 observations printed, 3 variables
+NOTE: PROC PRINT data=PUBLICIN.LNEGRO_CAR
+
+NOTE: PROC PRINT completed: 2 observations printed, 3 variables
+NOTE: PROC PRINT data=RESULT.STOCK_CC
+
+NOTE: PROC PRINT completed: 3 observations printed, 3 variables

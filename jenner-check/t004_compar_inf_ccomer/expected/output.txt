@@ -1,0 +1,18 @@
+
+   cuenta          sucursal   saldo
+---------  ----------------  ------
+CT0001001  Sucursal Centro   150000
+CT0001002  Sucursal Oriente   82000
+CT0001003  Sucursal Centro        0
+
+     rut             motivo  fecha_ingreso
+--------  -----------------  -------------
+11111111  MORA VENCIDA            19-10-01
+22222222  FRAUDE CONFIRMADO       19-11-15
+
+   cuenta  tipo_tarjeta  cupo_disponible
+---------  ------------  ---------------
+CT0002001  TC                     500000
+CT0002002  TD                          0
+CT0002003  TC                     125000
+

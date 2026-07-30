@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-07-30T16:50:00Z",
+  "_captured_run_id": "r_d5de6d645a65460b9d3109de4cf38403",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote psfc1.t7542700 (5 rows, 7 columns).",
+    "NOTE: Wrote psfc1.t7542600 (5 rows, 3 columns).",
+    "NOTE: Exported 3 rows to './output/SALDO_RP_202001.txt'."
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

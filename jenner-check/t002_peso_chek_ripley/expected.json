@@ -1,0 +1,12 @@
+{
+  "_captured_at": "2026-07-30T16:40:00Z",
+  "_captured_run_id": "r_921cd534c13548b0904f51bb9215b7ff",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Table WORK.PARAM_DEPTOS created with 4 columns.",
+    "NOTE: Table WORK.RESUMEN created."
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

@@ -1,0 +1,7 @@
+{
+  "bundle": "t003_saldo_purga",
+  "source_file": "SAS_JOBS/Saldo_Purga.sas",
+  "source_blob_sha": "72f1a0e4d9d55b27feb2e35521b252681a7cdbb0",
+  "source_commit": "27f6bb36480b4ba5998835746ddcc5d2095279c1",
+  "notes": "Loyalty-points reconciliation: builds a points-available extract (T7542700) filtered to TIPOPUNT='01', an active-enrollment extract (T7542600) filtered by enrollment date <= current period and no exit date, then LEFT JOINs enrolled customers to their points balance. Substituted mock PSFC1.T7542700 / PSFC1.T7542600 tables (5 rows each, covering matched, filtered-by-TIPOPUNT, filtered-by-enrollment-date, and unenrolled cases) for the Oracle-fed production tables, and pointed PUBLICIN at a local libname. Redirected the PROC EXPORT outfile from the hardcoded /sasdata/... path to a relative ./output/ path (never written to disk locally -- Jenner runs server-side). script.sas is otherwise unmodified; added a trailing PROC PRINT so the run has visible output."
+}
