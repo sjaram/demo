@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_marca_pan_anterior",
+  "source_file": "SAS_JOBS/MARCA_PAN_ANTERIOR.sas",
+  "source_blob_sha": "cd71e58d64b21db2b6be908a72e4a051309b24ae",
+  "source_commit": "27f6bb36480b4ba5998835746ddcc5d2095279c1",
+  "notes": "Card-migration report: groups UNIVERSO_PANES by RUT/account, takes MAX(NUMPLASTICO), normalizes card type via CASE WHEN, then LEFT JOINs the current record against the prior PAN to flag a card-type change (CDTT). Substituted a 9-row mock RESULT.UNIVERSO_PANES (built from the exact columns the script selects) for the Oracle-fed production table; script.sas is byte-identical to upstream."
+}

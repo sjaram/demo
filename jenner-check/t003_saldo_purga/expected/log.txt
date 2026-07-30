@@ -1,0 +1,55 @@
+NOTE: Option OBS changed to 100.
+NOTE: Library PSFC1 assigned path=/tmp/work/r_d5de6d645a65460b9d3109de4cf38403/work/4597e7a9-4b11-4819-a8e4-0fbc81ba7ee9.
+NOTE: Library PUBLICIN assigned path=/tmp/work/r_d5de6d645a65460b9d3109de4cf38403/work/4597e7a9-4b11-4819-a8e4-0fbc81ba7ee9.
+NOTE: DATA psfc1.t7542700
+
+NOTE: Processing inline DATALINES (5 lines)
+
+NOTE: Read 5 rows from DATALINES.
+NOTE: Wrote psfc1.t7542700 (5 rows, 7 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA psfc1.t7542600
+
+NOTE: Processing inline DATALINES (5 lines)
+
+NOTE: Read 5 rows from DATALINES.
+NOTE: Wrote psfc1.t7542600 (5 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA _null_
+
+
+NOTE: Wrote _null_ (0 rows, 0 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+20191201
+20191231
+01DEC2019
+31DEC2019
+202001
+201911
+201901
+20200101
+'./output/SALDO_RP_202001.txt'
+NOTE: PROC SQL 
+
+NOTE: Table WORK.PuntosDisp created.
+NOTE: PROC SQL statement used.
+NOTE: PROC SQL 
+
+NOTE: Table ENROLADOS created.
+NOTE: PROC SQL statement used.
+NOTE: PROC SQL 
+
+NOTE: Table PUBLICIN.SALDO_RP_202001 created.
+NOTE: PROC SQL statement used.
+NOTE: PROC EXPORT data=PUBLICIN.SALDO_RP_202001 outfile='./output/SALDO_RP_202001.txt'
+
+NOTE: Exported 3 rows to './output/SALDO_RP_202001.txt'.
+NOTE: PROC PRINT data=PUBLICIN.SALDO_RP_202001
+
+NOTE: PROC PRINT completed: 3 observations printed, 3 variables

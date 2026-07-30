@@ -1,0 +1,7 @@
+{
+  "bundle": "t004_compar_inf_ccomer",
+  "source_file": "SAS_JOBS/COMPAR_INF_CCOMER.sas",
+  "source_blob_sha": "43bee832472830d05ee3bcfa605bfa9fe26df387",
+  "source_commit": "27f6bb36480b4ba5998835746ddcc5d2095279c1",
+  "notes": "Commercial-control export job: three PROC EXPORT calls for current-account stock, a blacklist-flag table, and credit-card stock. Substituted small mock RESULT.CTAVTA1_STOCK / PUBLICIN.LNEGRO_CAR / RESULT.STOCK_CC tables for the production sources, redirected the outfile paths from /sasdata/... to a relative ./output/ path, and dropped the trailing FTP-transfer blocks (no reasonable substitute for a private FTP host). Added trailing PROC PRINT calls so the run has visible output; the three PROC EXPORT calls -- the script's actual logic -- are otherwise unmodified."
+}

@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-07-30T17:05:00Z",
+  "_captured_run_id": "r_8586510f68cd4f85b6ea6778e7f9f271",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Exported 3 rows to ./output/CTAVTA1_STOCK.csv.",
+    "NOTE: Exported 2 rows to ./output/LNEGRO_CAR.csv.",
+    "NOTE: Exported 3 rows to ./output/STOCK_CC.csv."
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}
